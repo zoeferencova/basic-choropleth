@@ -1,22 +1,19 @@
-import { range, scaleSequential, interpolateMagma, scaleLinear } from 'd3'
+import { range, scaleLinear } from 'd3'
 
-export const Legend = ({ colorValue, dataMax, height, width }) => {
+export const Legend = ({ colorScale, dataMax, height, width }) => {
     const containerHeight = 70;
     const barWidth = width / 2;
     const barHeight = 12;
     const barStartX = width / 4;
     const legendOffset = 30;
     const barStartY = (height - containerHeight / 2) - 10;
-    const legendColorScale = scaleSequential().domain([100, 0]).interpolator(interpolateMagma);
-    const steps = range(100)
 
-    console.log(Math.ceil(dataMax))
+    const legendColorScale = colorScale.domain([100, 0])
+    const steps = range(100)
 
     const legendScale = scaleLinear()
         .domain([0, Math.ceil(dataMax)])
         .range([0, barWidth])
-
-    console.log(legendScale.ticks(5))
 
     return (
         <svg className="legend">

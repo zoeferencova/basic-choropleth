@@ -17,6 +17,7 @@ code {
 
 pre {
   font-family: inherit;
+  margin-left: 120px;
 }
 
 .layout {
@@ -25,14 +26,16 @@ pre {
 }
 
 .page-header {
-  margin-left: 90px;
-  margin-right: 130px;
+  margin: 0px 120px 50px 120px;
+
 
   h1 {
     font-weight: 500;
+    margin: 0px;
   }
 
   p {
+    margin-top: 15px;
     line-height: 1.55rem;
     font-size: 1.07rem;
     color: #8f9197;
@@ -44,7 +47,7 @@ pre {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .small-button {

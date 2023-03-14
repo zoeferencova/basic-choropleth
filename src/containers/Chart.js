@@ -17,7 +17,7 @@ export const Chart = () => {
     const codes = useCodes();
 
     if (!worldAtlas || !data || !codes) {
-        return <pre>"Loading.."</pre>;
+        return <pre>Loading ...</pre>
     }
 
     const filteredData = data.filter(d => d.Year === selectedYear);
@@ -40,7 +40,6 @@ export const Chart = () => {
     const dataMax = max(data, colorValue);
 
     const colorScale = scaleSequential(interpolateMagma)
-        .domain([dataMax, 0])
 
     return (
         <svg width={width} height={height}>
@@ -48,11 +47,11 @@ export const Chart = () => {
                 <Marks
                     worldAtlas={worldAtlas}
                     rowByNumericCode={rowByNumericCode}
-                    colorScale={colorScale}
+                    colorScale={colorScale.domain([dataMax, 0])}
                     colorValue={colorValue}
                 />
             </g>
-            <Legend colorValue={colorValue} dataMax={dataMax} height={height} width={width} />
+            <Legend colorScale={colorScale} colorValue={colorValue} dataMax={dataMax} height={height} width={width} />
         </svg>
     );
 };
