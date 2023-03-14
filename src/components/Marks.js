@@ -12,7 +12,6 @@ export const Marks = ({ worldAtlas: { countries, interiors }, rowByNumericCode, 
     <path className="graticules" d={path(graticule())} />
     {countries.features.map(feature => {
       const d = rowByNumericCode.get(feature.id);
-      if (!d) console.log(feature.properties.name)
       return <path className="countries" fill={d ? colorScale(colorValue(d)) : missingDataColor} d={path(feature)} />
     })}
     <path className="interiors" d={path(interiors)} />
