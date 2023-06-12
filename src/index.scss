@@ -1,8 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@font-face {
+  font-family: "SF Display";
+  src: url("../public/fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Display";
+  font-weight: 500;
+  src: url("../public/fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Display";
+  font-weight: 700;
+  src: url("../public/fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "SF Display", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   letter-spacing: 0.003rem;
